@@ -1,11 +1,13 @@
 ---
 name: using-superpowers
-description: Route software work to the lightest useful workflow. Use at the start of a task to select relevant skills without turning ordinary implementation into a spec or approval process.
+description: Always-active router for software work. Consult at the start of every request to select and apply relevant Octapowers skills proportionally, without turning ordinary implementation into a spec or approval process.
 ---
 
-# Use Octapowers Proportionally
+# Consult Octapowers, Then Act Proportionally
 
-Select skills and process according to the user's request. Skills are tools, not mandatory ceremony.
+Consult Octapowers at the start of every request. Briefly determine whether a specialized skill would materially improve the work, then apply relevant skills proportionally.
+
+Octapowers is always active, but its individual skills are not. Consulting this router does not itself require a written design, implementation plan, approval gate, worktree, subagent, or visible process. Skills are tools, not mandatory ceremony.
 
 ## Default Workflow
 
