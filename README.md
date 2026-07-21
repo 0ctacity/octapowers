@@ -1,8 +1,10 @@
 # Octapowers
 
-Octapowers is a proportional software-development workflow for Codex and Claude Code.
+Octapowers is an independent fork of [Superpowers](https://github.com/obra/superpowers) 6.1.1 for the Octacity community. It provides a proportional software-development workflow for Codex and Claude Code.
 
 It keeps systematic debugging, test-driven development, verification, code review, worktrees, and agent-driven execution while avoiding mandatory specs and written plans for ordinary implementation work.
+
+Octapowers does not track Superpowers upstream. Its workflow, releases, and future development are maintained independently under [`octacity/octapowers`](https://github.com/octacity/octapowers).
 
 ## Supported coding agents
 
@@ -15,36 +17,44 @@ Other coding-agent harnesses are not currently supported.
 
 ### Codex
 
-The local development marketplace lives at:
-
-```text
-~/Desktop/VsCode/.agents/plugins/marketplace.json
-```
-
-Register it once:
+Add the Octapowers marketplace:
 
 ```bash
-codex plugin marketplace add ~/Desktop/VsCode
+codex plugin marketplace add octacity/octapowers
 ```
 
 Install Octapowers:
 
 ```bash
-codex plugin add octapowers@personal-dev
+codex plugin add octapowers@octapowers
 ```
 
-After editing the plugin, update its cachebuster and reinstall:
+Start a new Codex task after installation.
+
+To update later:
 
 ```bash
-~/Desktop/VsCode/.agents/plugins/update-octapowers.sh
-codex plugin add octapowers@personal-dev
+codex plugin marketplace upgrade octapowers
+codex plugin add octapowers@octapowers
 ```
 
-Start a new Codex task after installation or an update.
+Start another new task so Codex loads the updated plugin.
 
 ### Claude Code
 
-This repository includes a Claude Code plugin manifest and session-start hook under `.claude-plugin/` and `hooks/`. Register this checkout as a local Claude marketplace, then install `octapowers@octapowers-dev` through Claude Code's plugin manager.
+Add the Octapowers marketplace:
+
+```text
+/plugin marketplace add octacity/octapowers
+```
+
+Install Octapowers:
+
+```text
+/plugin install octapowers@octapowers
+```
+
+Run `/reload-plugins` after installation so Claude Code activates Octapowers in the current session.
 
 ## Workflow
 
@@ -62,6 +72,7 @@ Large or ambitious requests do not automatically create written artifacts or app
 
 - `using-superpowers`: proportional workflow routing
 - `brainstorming`: opt-in written design
+- `language-style`: compact, project-compatible conventions for supported languages
 - `writing-plans`: opt-in written implementation plans
 - `systematic-debugging`
 - `test-driven-development`
@@ -87,4 +98,4 @@ The repository also contains Codex packaging tests, Claude Code integration test
 
 ## License and attribution
 
-Octapowers is derived from Jesse Vincent's Superpowers project and remains available under the MIT License. See [LICENSE](LICENSE).
+Octapowers is an independent fork of Jesse Vincent's Superpowers 6.1.1. It is maintained by Octacity and remains available under the MIT License. See [LICENSE](LICENSE).

@@ -1,9 +1,8 @@
 {
-  "name": "octapowers-dev",
-  "description": "Development marketplace for Octapowers core skills library",
+  "name": "octapowers",
+  "description": "Octapowers skills for the Octacity community",
   "owner": {
-    "name": "Jesse Vincent",
-    "email": "jesse@fsck.com"
+    "name": "octacity"
   },
   "plugins": [
     {
@@ -12,8 +11,7 @@
       "version": "6.1.1",
       "source": "./",
       "author": {
-        "name": "Jesse Vincent",
-        "email": "jesse@fsck.com"
+        "name": "octacity"
       }
     }
   ]

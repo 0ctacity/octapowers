@@ -1,40 +1,35 @@
 ---
 name: executing-plans
-description: Use when you have a written implementation plan to execute in a separate session with review checkpoints
+description: Execute an approved written implementation plan when the user asks to proceed with it. Use the current session and a proportional workflow unless the user explicitly requests subagent-driven development or a worktree.
 ---
 
 # Executing Plans
 
 ## Overview
 
-Load plan, review critically, execute all tasks, report when complete.
+Load the approved plan, review it critically, execute it proportionally, verify the result, and report completion.
 
 **Announce at start:** "I'm using the executing-plans skill to implement this plan."
-
-**Note:** Tell your human partner that Octapowers works much better with access to subagents. The quality of its work will be significantly higher if run on a platform with subagent support (Claude Code, Codex CLI, and Codex App qualify; see the per-platform tool refs in `../using-superpowers/references/`). If subagents are available, use octapowers:subagent-driven-development instead of this skill.
 
 ## The Process
 
 ### Step 1: Load and Review Plan
 1. Read plan file
 2. Review critically - identify any questions or concerns about the plan
-3. If concerns: Raise them with your human partner before starting
+3. If a critical ambiguity would materially change the outcome: raise it before starting
 4. If no concerns: Create todos for the plan items and proceed
 
 ### Step 2: Execute Tasks
 
 For each task:
 1. Mark as in_progress
-2. Follow each step exactly (plan has bite-sized steps)
+2. Follow the plan's intent and constraints; adapt incidental implementation details when reality requires it
 3. Run verifications as specified
 4. Mark as completed
 
 ### Step 3: Complete Development
 
-After all tasks complete and verified:
-- Announce: "I'm using the finishing-a-development-branch skill to complete this work."
-- **REQUIRED SUB-SKILL:** Use octapowers:finishing-a-development-branch
-- Follow that skill to verify tests, present options, execute choice
+After all tasks complete, run verification appropriate to the change and report the result. Use `finishing-a-development-branch` only when the user asks to merge, open a PR, clean up, or otherwise finish the branch workflow.
 
 ## When to Stop and Ask for Help
 
@@ -60,11 +55,12 @@ After all tasks complete and verified:
 - Don't skip verifications
 - Reference skills when plan says to
 - Stop when blocked, don't guess
-- Never start implementation on main/master branch without explicit user consent
+- Respect repository instructions and the user's requested branch workflow
 
 ## Integration
 
-**Required workflow skills:**
-- **octapowers:using-git-worktrees** - Ensures isolated workspace (creates one or verifies existing)
-- **octapowers:writing-plans** - Creates the plan this skill executes
-- **octapowers:finishing-a-development-branch** - Complete development after all tasks
+**Related skills:**
+- `writing-plans` creates the approved plan this skill executes.
+- Use `subagent-driven-development` only when the user explicitly requests it.
+- Use `using-git-worktrees` only when the user explicitly requests a worktree.
+- Use `finishing-a-development-branch` when the user asks to finish the branch workflow.

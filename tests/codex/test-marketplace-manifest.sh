@@ -22,10 +22,10 @@ def assert_equal(actual, expected, label):
     if actual != expected:
         raise AssertionError(f"{label}: expected {expected!r}, got {actual!r}")
 
-assert_equal(marketplace.get("name"), "octapowers-dev", "marketplace name")
+assert_equal(marketplace.get("name"), "octapowers", "marketplace name")
 assert_equal(
     marketplace.get("interface", {}).get("displayName"),
-    "Octapowers Dev",
+    "Octapowers",
     "marketplace display name",
 )
 

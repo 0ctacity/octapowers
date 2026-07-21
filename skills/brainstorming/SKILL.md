@@ -1,39 +1,60 @@
 ---
 name: brainstorming
-description: Create and validate a written software design when the user explicitly asks for a spec, design document, or design-first workflow. Do not trigger merely because implementation is ambitious, creative, architectural, or multi-step.
+description: Explore software ideas, requirements, alternatives, architecture, or design decisions when the user explicitly asks to brainstorm, think something through, explore options, or create a written design/spec. Conversational exploration creates no artifact or approval gate; written design does so only when explicitly requested.
 ---
 
-# Written Design
+# Brainstorming
 
-Turn the user's request into a concise written design that resolves decisions needed before implementation.
+Help the user clarify an idea and make decisions at the level of formality they requested.
 
-## Entry Condition
+## Select the Mode
 
-Use this workflow only when the user explicitly requests a written spec, design document, design-first process, or this skill by name.
+Use this skill only when the user explicitly asks to brainstorm, explore alternatives, think through an idea, discuss architecture or design, create a design/spec, or invokes this skill by name. Do not trigger merely because implementation is ambitious, creative, architectural, or multi-step.
 
-Do not use it automatically for feature work. When the user asks to build or change something without requesting a written design, the agent may reason through an internal design and proceed without exposing a document or waiting for approval.
+- **Exploratory brainstorming:** Use when the user wants discussion, ideation, alternatives, or help deciding. Keep it conversational. Do not create a document or approval gate.
+- **Written design:** Use only when the user explicitly requests a spec, design document, design-first workflow, or another persistent design artifact.
 
-## Workflow
+If the request says only “brainstorm,” use exploratory brainstorming. Do not silently upgrade it to a written design workflow.
 
-1. Inspect the relevant project context and existing patterns.
-2. Identify only the decisions whose answers materially affect the design.
-3. Ask focused questions for decisions that cannot be inferred safely. Batch closely related questions when that is more efficient.
-4. Present alternatives only when multiple approaches have meaningful tradeoffs.
-5. Write a design scaled to the task. Cover architecture, boundaries, data flow, failure behavior, and verification only where relevant.
-6. Check the design for ambiguity, contradictions, placeholders, and unnecessary scope.
-7. Save it to `docs/octapowers/specs/YYYY-MM-DD-<topic>-design.md`, unless the user specifies another location.
-8. Ask the user to approve or revise the written design.
+## Shared Approach
 
-Do not begin implementation before approval. Approval is required here because the user explicitly selected a written design workflow.
+1. Inspect relevant project context when the discussion concerns an existing project.
+2. Identify the decisions that materially affect the outcome.
+3. Ask focused questions only when answers cannot be inferred safely. Batch related questions when useful.
+4. Present alternatives only when they have meaningful tradeoffs.
+5. Make a recommendation when the evidence supports one.
+6. Keep the depth proportional to the user's question.
 
-## After Approval
+## Exploratory Brainstorming
 
-- If the user also requested a written implementation plan, invoke `writing-plans`.
-- If the user authorized implementation after design approval without requesting a written plan, implement directly using an internal plan as needed.
-- If the user requested only a design, stop after delivering the approved design.
+Discuss the idea directly in the conversation. Use short options, tradeoffs, sketches, examples, or a recommendation as appropriate.
 
-Do not commit the design unless the user asks for a commit or the surrounding workflow explicitly includes commits.
+Do not save a design document, request formal approval, or force a transition into planning. At the end:
 
-## Design Standard
+- stop if the user requested exploration only;
+- continue implementing if the user already authorized implementation after brainstorming;
+- offer the relevant conclusion and wait for direction when the next action is genuinely unspecified.
 
-Keep the document decision-focused. Avoid restating obvious requirements, prescribing code that belongs in implementation, or expanding the requested scope. A short design is correct for a small design request.
+## Written Design
+
+Create a decision-focused design scaled to the task. Cover architecture, boundaries, data flow, failure behavior, and verification only where relevant.
+
+1. Check the design for ambiguity, contradictions, placeholders, and unnecessary scope.
+2. Save it to `docs/octapowers/specs/YYYY-MM-DD-<topic>-design.md`, unless the user specifies another location.
+3. Ask the user to approve or revise the written design.
+
+Do not begin implementation before approval. This approval gate applies only because the user explicitly requested a persistent written design workflow.
+
+After approval:
+
+- invoke `writing-plans` if the user also requested a written implementation plan;
+- implement directly with an internal plan if the user already authorized implementation and did not request a written plan;
+- stop if the user requested only the design.
+
+Do not commit the design unless the user requests a commit or the surrounding workflow explicitly includes commits.
+
+## Visual Companion
+
+In either mode, when a question is materially easier to understand visually—such as a UI layout, architecture diagram, flow, spatial relationship, or side-by-side visual direction—read [visual-companion.md](visual-companion.md) and offer or use the browser-based companion. Keep textual requirements, tradeoffs, and ordinary clarification in the conversation.
+
+The companion supports brainstorming; it does not create a written-design or approval requirement.

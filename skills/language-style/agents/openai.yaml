@@ -1,0 +1,4 @@
+interface:
+  display_name: "Language Style"
+  short_description: "Idiomatic style and performance guidance"
+  default_prompt: "Use $language-style to apply idiomatic language conventions to this code."

@@ -1,7 +1,7 @@
 {
-  "name": "octapowers-dev",
+  "name": "octapowers",
   "interface": {
-    "displayName": "Octapowers Dev"
+    "displayName": "Octapowers"
   },
   "plugins": [
     {
