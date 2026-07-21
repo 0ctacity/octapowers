@@ -1,62 +1,56 @@
 ---
 name: using-superpowers
-description: Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before ANY response including clarifying questions
+description: Route software work to the lightest useful workflow. Use at the start of a task to select relevant skills without turning ordinary implementation into a spec or approval process.
 ---
 
-<SUBAGENT-STOP>
-If you were dispatched as a subagent to execute a specific task, ignore this skill.
-</SUBAGENT-STOP>
+# Use Octapowers Proportionally
 
-<EXTREMELY-IMPORTANT>
-If you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.
+Select skills and process according to the user's request. Skills are tools, not mandatory ceremony.
 
-IF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.
+## Default Workflow
 
-This is not negotiable. You cannot rationalize your way out of this.
-</EXTREMELY-IMPORTANT>
+Treat a moderate workflow as the default, even when the requested change appears ambitious:
 
-## The Rule
+1. Inspect the relevant project context.
+2. Resolve ordinary implementation details using sound judgment and existing project patterns.
+3. Form an internal approach or internal plan when useful.
+4. Implement the requested change.
+5. Verify the result in proportion to risk.
+6. Report what changed, verification performed, and any genuine uncertainty.
 
-**Invoke relevant or requested skills BEFORE any response or action** — including clarifying questions, exploring the codebase, or checking files. If it turns out wrong for the situation, you don't have to use it.
+Continue autonomously. Do not ask for approval merely because the task is large, multi-step, or would benefit from internal planning.
 
-**Before entering plan mode:** if you haven't already brainstormed, invoke the brainstorming skill first.
+## Written Design and Plan
 
-Then announce "Using [skill] to [purpose]" and follow the skill exactly. If it has a checklist, create a todo per item.
+Create a written design or implementation plan only when the user explicitly requests one. An explicit request includes phrases such as "write a spec," "design this first," "create an implementation plan," or a direct invocation of the corresponding skill.
 
-## Skill Priority
+When the user explicitly requests a written design or implementation plan:
 
-When multiple skills apply, process skills come first — they set the approach, then implementation skills (frontend-design, etc.) carry it out. Brainstorming and systematic-debugging are Superpowers' most common process skills, but the rule holds for any of them.
+- use `brainstorming` for the written design;
+- obtain user approval of the design before creating a written implementation plan;
+- obtain user approval of the implementation plan before implementation, unless the user explicitly authorizes automatic execution after planning.
 
-- "Let's build X" → superpowers:brainstorming first, then implementation skills.
-- "Fix this bug" → superpowers:systematic-debugging first, then domain skills.
+An ambitious request by itself is not a request for a written artifact or an approval gate. For large requests stated as "build," "implement," "fix," or equivalent, create any useful internal spec or plan privately and keep moving.
 
-## Red Flags
+## Skill Selection
 
-These thoughts mean STOP—you're rationalizing:
+Invoke a skill when its specialized workflow materially helps the task or the user requests it. Do not invoke a skill only because it might be tangentially relevant.
 
-| Thought | Reality |
-|---------|---------|
-| "This is just a simple question" | Questions are tasks. Check for skills. |
-| "I need more context first" | Skill check comes BEFORE clarifying questions. |
-| "Let me explore the codebase first" | Skills tell you HOW to explore. Check first. |
-| "I can check git/files quickly" | Files lack conversation context. Check for skills. |
-| "Let me gather information first" | Skills tell you HOW to gather information. |
-| "This doesn't need a formal skill" | If a skill exists, use it. |
-| "I remember this skill" | Skills evolve. Read current version. |
-| "This doesn't count as a task" | Action = task. Check for skills. |
-| "The skill is overkill" | Simple things become complex. Use it. |
-| "I'll just do this one thing first" | Check BEFORE doing anything. |
-| "This feels productive" | Undisciplined action wastes time. Skills prevent this. |
-| "I know what that means" | Knowing the concept ≠ using the skill. Invoke it. |
+- Bugs and unexpected behavior: use `systematic-debugging`.
+- Behavior changes where test-first work is practical: use `test-driven-development`.
+- Before claiming completion: use `verification-before-completion`.
+- Written design explicitly requested: use `brainstorming`.
+- Written implementation plan explicitly requested: use `writing-plans`.
+- Parallel agents, worktrees, reviews, and branch-finishing: use them when requested or when they materially improve execution without introducing an unnecessary user gate.
+
+## User Authority
+
+Direct user instructions and project instructions take precedence. If the user says to implement directly, skip written planning. If the user asks only for analysis or a plan, do not implement.
+
+If a consequential decision cannot be inferred safely and would materially change the requested outcome, ask one focused question. Otherwise make a reasonable assumption, state it when relevant, and proceed.
 
 ## Platform Adaptation
 
-If your harness appears here, read its reference file for special instructions:
+When platform-specific tool behavior matters, read the matching reference:
 
 - Codex: `references/codex-tools.md`
-- Pi: `references/pi-tools.md`
-- Antigravity: `references/antigravity-tools.md`
-
-## User Instructions
-
-User instructions (CLAUDE.md, AGENTS.md, GEMINI.md, etc, direct requests) take precedence over skills, which in turn override default behavior. Only skip skill workflows or instructions when your human partner has explicitly told you to.

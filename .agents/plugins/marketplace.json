@@ -1,11 +1,11 @@
 {
-  "name": "superpowers-dev",
+  "name": "octapowers-dev",
   "interface": {
-    "displayName": "Superpowers Dev"
+    "displayName": "Octapowers Dev"
   },
   "plugins": [
     {
-      "name": "superpowers",
+      "name": "octapowers",
       "source": {
         "source": "url",
         "url": "./"

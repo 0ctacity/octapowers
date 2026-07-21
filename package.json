@@ -1,23 +1,13 @@
 {
-  "name": "superpowers",
+  "name": "octapowers",
   "version": "6.1.1",
-  "description": "Superpowers skills and runtime bootstrap for coding agents",
+  "description": "Octapowers skills and runtime bootstrap for Codex and Claude Code",
   "type": "module",
-  "main": ".opencode/plugins/superpowers.js",
   "keywords": [
-    "pi-package",
     "skills",
     "tdd",
     "debugging",
     "collaboration",
     "workflow"
-  ],
-  "pi": {
-    "extensions": [
-      "./.pi/extensions/superpowers.ts"
-    ],
-    "skills": [
-      "./skills"
-    ]
-  }
+  ]
 }

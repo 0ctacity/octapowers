@@ -1,14 +1,14 @@
 {
-  "name": "superpowers-dev",
-  "description": "Development marketplace for Superpowers core skills library",
+  "name": "octapowers-dev",
+  "description": "Development marketplace for Octapowers core skills library",
   "owner": {
     "name": "Jesse Vincent",
     "email": "jesse@fsck.com"
   },
   "plugins": [
     {
-      "name": "superpowers",
-      "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
+      "name": "octapowers",
+      "description": "Octapowers skills for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
       "version": "6.1.1",
       "source": "./",
       "author": {
