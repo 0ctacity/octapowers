@@ -1,7 +1,7 @@
 {
-  "name": "octapowers",
+  "name": "0ctacity",
   "interface": {
-    "displayName": "Octapowers"
+    "displayName": "Octacity"
   },
   "plugins": [
     {

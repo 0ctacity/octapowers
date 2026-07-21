@@ -26,7 +26,7 @@ codex plugin marketplace add 0ctacity/octapowers
 Install Octapowers:
 
 ```bash
-codex plugin add octapowers@octapowers
+codex plugin add octapowers@0ctacity
 ```
 
 Start a new Codex task after installation.
@@ -34,8 +34,8 @@ Start a new Codex task after installation.
 To update later:
 
 ```bash
-codex plugin marketplace upgrade octapowers
-codex plugin add octapowers@octapowers
+codex plugin marketplace upgrade 0ctacity
+codex plugin add octapowers@0ctacity
 ```
 
 Start another new task so Codex loads the updated plugin.
@@ -51,7 +51,7 @@ Add the Octapowers marketplace:
 Install Octapowers:
 
 ```text
-/plugin install octapowers@octapowers
+/plugin install octapowers@0ctacity
 ```
 
 Run `/reload-plugins` after installation so Claude Code activates Octapowers in the current session.
