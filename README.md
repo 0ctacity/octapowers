@@ -4,7 +4,7 @@ Octapowers is an independent fork of [Superpowers](https://github.com/obra/super
 
 It keeps systematic debugging, test-driven development, verification, code review, worktrees, and agent-driven execution while avoiding mandatory specs and written plans for ordinary implementation work.
 
-Octapowers does not track Superpowers upstream. Its workflow, releases, and future development are maintained independently under [`octacity/octapowers`](https://github.com/octacity/octapowers).
+Octapowers does not track Superpowers upstream. Its workflow, releases, and future development are maintained independently under [`0ctacity/octapowers`](https://github.com/0ctacity/octapowers).
 
 ## Supported coding agents
 
@@ -20,7 +20,7 @@ Other coding-agent harnesses are not currently supported.
 Add the Octapowers marketplace:
 
 ```bash
-codex plugin marketplace add octacity/octapowers
+codex plugin marketplace add 0ctacity/octapowers
 ```
 
 Install Octapowers:
@@ -45,7 +45,7 @@ Start another new task so Codex loads the updated plugin.
 Add the Octapowers marketplace:
 
 ```text
-/plugin marketplace add octacity/octapowers
+/plugin marketplace add 0ctacity/octapowers
 ```
 
 Install Octapowers:
