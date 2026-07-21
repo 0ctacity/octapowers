@@ -1,6 +1,6 @@
 {
   "name": "octapowers",
-  "version": "6.1.1",
+  "version": "1.0.0",
   "description": "Octapowers skills and runtime bootstrap for Codex and Claude Code",
   "author": "octacity",
   "homepage": "https://github.com/octacity/octapowers",
