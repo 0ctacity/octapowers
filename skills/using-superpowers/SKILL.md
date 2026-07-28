@@ -39,6 +39,8 @@ An ambitious request by itself is not a request for a written artifact or an app
 Invoke a skill when its specialized workflow materially helps the task or the user requests it. Do not invoke a skill only because it might be tangentially relevant.
 
 - Bugs and unexpected behavior: use `systematic-debugging`.
+- Security-sensitive implementation or an explicit security assessment: use `security-review`.
+- Performance problems or explicit optimization work: use `performance-investigation`.
 - Use `test-driven-development` by default for every non-tiny implementation or behavior change. Skip it for trivial mechanical edits. Skip TDD when the user explicitly says not to write tests, not to use TDD, or gives an equivalent instruction.
 - Before claiming completion: use `verification-before-completion`.
 - Brainstorming, ideation, option exploration, or written design explicitly requested: use `brainstorming`. Only the written-design mode creates an artifact and approval gate.

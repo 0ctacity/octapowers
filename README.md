@@ -75,6 +75,8 @@ Large or ambitious requests do not automatically create written artifacts or app
 - `language-style`: compact, project-compatible conventions for supported languages
 - `writing-plans`: opt-in written implementation plans
 - `systematic-debugging`
+- `security-review`
+- `performance-investigation`
 - `test-driven-development`
 - `verification-before-completion`
 - `requesting-code-review`

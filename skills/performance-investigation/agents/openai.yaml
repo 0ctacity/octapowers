@@ -1,0 +1,4 @@
+interface:
+  display_name: "Performance Investigation"
+  short_description: "Measure, locate, and verify performance improvements"
+  default_prompt: "Use $performance-investigation to investigate this performance problem."

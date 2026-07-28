@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Review"
+  short_description: "Evidence-based review of security-sensitive changes"
+  default_prompt: "Use $security-review to assess this security-sensitive change."
