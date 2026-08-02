@@ -22,6 +22,20 @@ Treat a moderate workflow as the default, even when the requested change appears
 
 Continue autonomously. Do not ask for approval merely because the task is large, multi-step, or would benefit from internal planning.
 
+## Implementation Economy
+
+For implementation, prefer the smallest coherent change that completely satisfies the requested behavior. Minimal means fewer unnecessary concepts, files, dependencies, states, and public APIs—not code golf.
+
+- Extend an existing path before creating a parallel mechanism.
+- Add an abstraction only when it serves multiple concrete uses or protects a meaningful boundary, invariant, or resource lifetime.
+- Do not add speculative configuration, extension points, compatibility layers, fallbacks, or generalized APIs for hypothetical future requirements.
+- Do not introduce a dependency when existing project facilities or a small clear implementation are sufficient.
+- Keep unrelated cleanup and architectural refactoring outside the requested change unless necessary for correctness.
+- Prefer explicit local code when extracting a helper would merely relocate or obscure a one-off operation.
+- Remove only scaffolding, dead branches, redundant wrappers, and options introduced during the current task and now unnecessary. Never modify, revert, or delete pre-existing user work merely to reduce the diff.
+
+When two solutions satisfy the same requirements and evidence, choose the one with fewer concepts and a smaller maintenance surface.
+
 ## Written Design and Plan
 
 Create a written design or implementation plan only when the user explicitly requests that artifact or gated workflow. Examples include "write a spec," "create a design document," "design this first and wait for approval," or "create an implementation plan." Invoking `brainstorming` by name without requesting a document selects exploratory brainstorming, not a written design.

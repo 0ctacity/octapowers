@@ -49,6 +49,18 @@ assert_word_count_at_most() {
 
 assert_contains "$router" "Treat a moderate workflow as the default"
 assert_contains "$router" "Octapowers is always active, but its individual skills are not."
+assert_contains "$router" "## Implementation Economy"
+assert_contains "$router" "prefer the smallest coherent change that completely satisfies the requested behavior"
+assert_contains "$router" "not code golf"
+assert_contains "$router" "Extend an existing path before creating a parallel mechanism."
+assert_contains "$router" "multiple concrete uses or protects a meaningful boundary, invariant, or resource lifetime"
+assert_contains "$router" "Do not add speculative configuration, extension points, compatibility layers, fallbacks, or generalized APIs"
+assert_contains "$router" "Do not introduce a dependency when existing project facilities or a small clear implementation are sufficient."
+assert_contains "$router" "Keep unrelated cleanup and architectural refactoring outside the requested change unless necessary for correctness."
+assert_contains "$router" "Prefer explicit local code when extracting a helper would merely relocate or obscure a one-off operation."
+assert_contains "$router" "Remove only scaffolding, dead branches, redundant wrappers, and options introduced during the current task"
+assert_contains "$router" "Never modify, revert, or delete pre-existing user work merely to reduce the diff."
+assert_contains "$router" "fewer concepts and a smaller maintenance surface"
 assert_contains "$router" "Create a written design or implementation plan only when the user explicitly requests that artifact or gated workflow."
 assert_contains "$router" 'Invoking `brainstorming` by name without requesting a document selects exploratory brainstorming'
 assert_contains "$router" "create any useful internal spec or plan privately and keep moving"
